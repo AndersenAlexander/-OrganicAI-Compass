@@ -7,6 +7,8 @@ OrganicAI Compass is a human-centred AI platform designed to help people discove
 The platform transforms fear and uncertainty about AI, robots, and automation into clarity, creativity, and meaningful contribution.
 
 ## Visual Concept
+<img width="1448" height="1086" alt="ChatGPT Image 10 iul  2026, 22_07_16 (1)" src="https://github.com/user-attachments/assets/7d1e5a2a-bb7a-41b1-95f1-a8c92272d21f" />
+
 
 OrganicAI Compass is visually inspired by organic architecture and human-centred technology. The interface uses flowing shapes, soft gradients, glass panels, natural colors, and connected visual nodes to express the transition from fear and scarcity toward creativity, collaboration, contribution, and purpose.
 
@@ -15,6 +17,9 @@ The design direction is based on the concept of Organic Human-AI Symbiosis:
 - The old paradigm: fear, repetitive work, competition, scarcity.
 - The new paradigm: creativity, abundance, collaboration, contribution.
 - The platform core: human diagnostic, talent map, fear transformation, AI coach, personal roadmap.
+
+<img width="1448" height="1086" alt="ChatGPT Image 10 iul  2026, 22_07_16 (2)" src="https://github.com/user-attachments/assets/b68c1227-e78f-4775-8099-9aaefc53a869" />
+
 
 ## 2. Thesis Context
 
