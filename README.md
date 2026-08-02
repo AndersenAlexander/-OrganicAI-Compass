@@ -341,23 +341,3 @@ The platform uses:
 
 ---
 
-## Explainable profile fallback
-
-When OpenAI is unavailable, the backend creates the same explainable profile schema with transparent, non-clinical rules. Systems, visual-creation, or technology signals suggest a Visionary Architect tendency; people, community, care, or empathy signals suggest a Human-Centred Integrator tendency; ideas, exploration, and learning signals suggest a Curious Explorer tendency. Confidence values describe answer coverage only, not scientific or psychometric certainty. The generated interpretation remains editable and user-confirmable through profile feedback.
-
-## Explainable recommendation engine
-
-Recommendations use a hybrid pipeline: compact profile context, feedback overrides, deterministic candidate rules, Knowledge Base enrichment, multi-factor scoring, diversity filtering, explanation, and persistence. Transparent rules prioritize visual prototyping for visual/design signals, workflow mapping for systems/technology signals, facilitation for people/community signals, and low-risk guided practice for low AI experience or confidence. The OrganicAI relevance indicator combines profile match, goals, learning style, feasibility, impact, evidence quality, and risk penalty. It is a platform matching indicator, not psychometric or predictive certainty. Rejections influence future ranking without silently changing the core profile.
-
-
-
-Access is denied. (os error 5)
-
-## Please verify there are no Visual Studio Code processes still executing.
-
-## Retry Cancel
-# Adaptive roadmap execution
-
-The roadmap is a flexible execution guide rather than a static generated result. Existing JSON roadmaps remain available and are normalized into persistent actions on first access. Progress is based only on action state: completed actions count fully, in-progress actions count at 0.35, and skipped actions are shown separately rather than treated as failure.
-
-Recalibration is proposal-first: transparent deterministic rules can suggest smaller prerequisites after difficult skips, reduce overloaded seven-day plans, or shrink the next action after a low-energy check-in. Nothing is applied until the user approves it; each applied proposal creates a version snapshot. OpenAI and RAG are optional enhancements, so manual editing, action completion, and rule-based recalibration continue to work when either is unavailable.
