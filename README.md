@@ -349,9 +349,7 @@ When OpenAI is unavailable, the backend creates the same explainable profile sch
 
 Recommendations use a hybrid pipeline: compact profile context, feedback overrides, deterministic candidate rules, Knowledge Base enrichment, multi-factor scoring, diversity filtering, explanation, and persistence. Transparent rules prioritize visual prototyping for visual/design signals, workflow mapping for systems/technology signals, facilitation for people/community signals, and low-risk guided practice for low AI experience or confidence. The OrganicAI relevance indicator combines profile match, goals, learning style, feasibility, impact, evidence quality, and risk penalty. It is a platform matching indicator, not psychometric or predictive certainty. Rejections influence future ranking without silently changing the core profile.
 
-## Visual Studio Code
 
-There was an error while Deleting a directory: "C:\\Users\\achid\\AppData\\Local\\Programs\\Microsoft VS Code\\e7fb5e96c0":
 
 Access is denied. (os error 5)
 
