@@ -1,0 +1,1175 @@
+.how-it-works-page,
+.how-it-works-page * {
+  box-sizing: border-box;
+}
+
+body:has(.how-it-works-page),
+body:has(.how-it-works-page) .public-main {
+  overflow-x: clip !important;
+}
+
+.how-it-works-page {
+  --how-page-max: 1392px;
+  --how-page-gutter: clamp(1rem, 3vw, 3rem);
+  --how-text: #eefcff;
+  --how-muted: rgba(230, 255, 252, 0.74);
+  --how-subtle: rgba(230, 255, 252, 0.62);
+  --how-panel: rgba(4, 19, 32, 0.72);
+  --how-panel-strong: rgba(6, 27, 43, 0.86);
+  --how-panel-soft: rgba(6, 27, 43, 0.58);
+  --how-border: rgba(126, 242, 231, 0.18);
+  --how-shadow: 0 22px 60px rgba(0, 0, 0, 0.28);
+  --how-accent: #19d7c4;
+  --how-accent-strong: #0f766e;
+  --how-cta-text: #ffffff;
+  position: relative !important;
+  isolation: isolate;
+  min-height: 100%;
+  overflow: clip !important;
+  color: var(--how-text) !important;
+}
+
+[data-theme="light"] .how-it-works-page {
+  --how-text: #10283a;
+  --how-muted: #36566a;
+  --how-subtle: #517083;
+  --how-panel: rgba(255, 255, 255, 0.96);
+  --how-panel-strong: rgba(255, 255, 255, 0.985);
+  --how-panel-soft: rgba(237, 249, 248, 0.96);
+  --how-border: rgba(20, 126, 130, 0.2);
+  --how-shadow: 0 22px 58px rgba(20, 54, 70, 0.14);
+  --how-accent: #087f78;
+  --how-accent-strong: #06635e;
+  --how-cta-text: #ffffff;
+  background:
+    radial-gradient(circle at 16% 8%, rgba(72, 196, 184, 0.16), transparent 34rem),
+    radial-gradient(circle at 88% 18%, rgba(84, 214, 202, 0.14), transparent 30rem),
+    linear-gradient(180deg, #f9fffe 0%, #edf9f8 44%, #f8fcfb 100%) !important;
+  color: var(--how-text) !important;
+}
+
+.how-it-works-page .how-page-atmosphere {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 0 !important;
+  pointer-events: none !important;
+  overflow: hidden !important;
+}
+
+[data-theme="light"] .how-it-works-page .how-page-atmosphere {
+  opacity: 0.44 !important;
+  mix-blend-mode: normal !important;
+}
+
+[data-theme="light"] .how-it-works-page .how-page-atmosphere :where(.how-page-curve, .how-page-botanical, .how-page-particles) {
+  opacity: 0.45 !important;
+  filter: none !important;
+}
+
+.how-it-works-page .how-page-container {
+  width: min(var(--how-page-max), calc(100% - (var(--how-page-gutter) * 2))) !important;
+  max-width: none !important;
+  margin-inline: auto !important;
+}
+
+.how-it-works-page .how-page-main {
+  position: relative !important;
+  z-index: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: clamp(3.25rem, 7vw, 6rem) !important;
+  padding-block: clamp(2rem, 4.5vw, 4.75rem) clamp(4.5rem, 8vw, 7.5rem) !important;
+  overflow: visible !important;
+}
+
+.how-it-works-page :where(.how-page-section, .journey-dashboard, .how-hero) {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+}
+
+.how-it-works-page :where(.how-hero, .journey-dashboard, .how-page-section) {
+  box-shadow: var(--how-shadow);
+}
+
+.how-it-works-page :where(.how-hero-title, .how-section-heading h2, .journey-preview-copy h3, .journey-stage-card h3, .pipeline-layer h3, .rag-card h3, .privacy-panel h3, .how-final-copy h2) {
+  color: var(--how-text) !important;
+  letter-spacing: -0.02em;
+}
+
+.how-it-works-page :where(.how-hero-description, .how-section-heading span, .journey-preview-copy p, .journey-stage-copy p, .pipeline-layer p, .rag-card p, .privacy-panel li, .how-final-copy span) {
+  color: var(--how-muted) !important;
+}
+
+[data-theme="light"] .how-it-works-page :where(.how-hero-title span, .how-hero-description, .how-section-heading span, .journey-stage-copy p, .journey-preview-copy p, .pipeline-layer p, .rag-card p) {
+  background: transparent !important;
+  box-shadow: none !important;
+  -webkit-text-fill-color: currentColor !important;
+}
+
+.how-it-works-page .how-section-heading {
+  position: relative !important;
+  z-index: 1 !important;
+  display: grid !important;
+  gap: 0.75rem !important;
+  max-width: min(760px, 100%) !important;
+  margin: 0 0 clamp(1.5rem, 3vw, 2.25rem) !important;
+  text-align: left !important;
+}
+
+.how-it-works-page .how-section-heading p,
+.how-it-works-page .how-hero-eyebrow,
+.how-it-works-page .journey-preview-kicker,
+.how-it-works-page .how-final-copy > span {
+  width: max-content;
+  max-width: 100%;
+  border: 1px solid rgba(30, 214, 200, 0.24);
+  border-radius: 999px;
+  padding: 0.36rem 0.72rem;
+  background: rgba(15, 118, 110, 0.16);
+  color: #bffcf5 !important;
+  font-size: 0.72rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+[data-theme="light"] .how-it-works-page .how-section-heading p,
+[data-theme="light"] .how-it-works-page .how-hero-eyebrow,
+[data-theme="light"] .how-it-works-page .journey-preview-kicker,
+[data-theme="light"] .how-it-works-page .how-final-copy > span {
+  border-color: rgba(8, 127, 120, 0.22) !important;
+  background: rgba(221, 248, 246, 0.92) !important;
+  color: #075e5a !important;
+}
+
+.how-it-works-page .how-section-heading h2 {
+  max-width: 13ch;
+  margin: 0 !important;
+  font-size: clamp(2.2rem, 4.3vw, 4.7rem) !important;
+  line-height: 0.96 !important;
+}
+
+.how-it-works-page .how-section-heading span {
+  display: block !important;
+  max-width: 720px !important;
+  font-size: clamp(1rem, 1.45vw, 1.18rem) !important;
+  line-height: 1.7 !important;
+}
+
+.how-it-works-page .how-hero {
+  display: grid !important;
+  grid-template-columns: minmax(0, 0.44fr) minmax(0, 0.56fr) !important;
+  min-height: clamp(34rem, 55vw, 42rem) !important;
+  height: auto !important;
+  border: 1px solid var(--how-border) !important;
+  border-radius: clamp(1.6rem, 3vw, 2.35rem) !important;
+  background: linear-gradient(135deg, rgba(7, 27, 43, 0.88), rgba(5, 21, 34, 0.76)) !important;
+  overflow: hidden !important;
+}
+
+[data-theme="light"] .how-it-works-page .how-hero {
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.985), rgba(237, 249, 248, 0.97)),
+    radial-gradient(circle at 85% 20%, rgba(8, 127, 120, 0.14), transparent 24rem) !important;
+  border-color: var(--how-border) !important;
+  box-shadow: var(--how-shadow) !important;
+}
+
+.how-it-works-page .how-hero-copy {
+  min-width: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  gap: clamp(1.15rem, 2.3vw, 1.8rem) !important;
+  padding: clamp(2rem, 5vw, 4.25rem) !important;
+  color: var(--how-text) !important;
+}
+
+.how-it-works-page .how-hero-title {
+  display: grid !important;
+  gap: 0.1em !important;
+  max-width: 10.5ch !important;
+  margin: 0 !important;
+  font-size: clamp(3rem, 6.5vw, 6.7rem) !important;
+  line-height: 0.9 !important;
+  text-wrap: balance;
+}
+
+.how-it-works-page .how-hero-title span {
+  display: block;
+  color: inherit !important;
+}
+
+.how-it-works-page .how-hero-title-accent {
+  color: #77f2e8 !important;
+  -webkit-text-fill-color: currentColor !important;
+}
+
+[data-theme="light"] .how-it-works-page .how-hero-title-accent {
+  color: #087f78 !important;
+}
+
+.how-it-works-page .how-hero-description {
+  max-width: 43rem !important;
+  margin: 0 !important;
+  font-size: clamp(1rem, 1.45vw, 1.18rem) !important;
+  line-height: 1.75 !important;
+}
+
+.how-it-works-page .how-hero-actions,
+.how-it-works-page .how-final-actions {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 0.85rem !important;
+  align-items: center !important;
+}
+
+.how-it-works-page .public-button,
+.how-it-works-page .journey-action-link {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.45rem !important;
+  min-height: 2.9rem !important;
+  border-radius: 999px !important;
+  border: 1px solid rgba(31, 214, 200, 0.35) !important;
+  background: rgb(8, 127, 120) !important;
+  color: var(--how-cta-text) !important;
+  font-weight: 800 !important;
+  text-decoration: none !important;
+  white-space: normal !important;
+  box-shadow: 0 14px 30px rgba(2, 94, 85, 0.22) !important;
+}
+
+.how-it-works-page .public-button.secondary {
+  background: rgba(255, 255, 255, 0.1) !important;
+  color: #e9fffb !important;
+  border-color: rgba(168, 255, 247, 0.24) !important;
+  box-shadow: none !important;
+}
+
+[data-theme="light"] .how-it-works-page .public-button,
+[data-theme="light"] .how-it-works-page .journey-action-link {
+  background: rgb(8, 127, 120) !important;
+  color: #ffffff !important;
+  border-color: rgba(8, 127, 120, 0.3) !important;
+  box-shadow: 0 14px 28px rgba(8, 127, 120, 0.2) !important;
+}
+
+[data-theme="light"] .how-it-works-page .public-button.secondary {
+  background: rgba(255, 255, 255, 0.96) !important;
+  color: #10283a !important;
+  border-color: rgba(8, 127, 120, 0.24) !important;
+  box-shadow: 0 12px 26px rgba(20, 54, 70, 0.1) !important;
+}
+
+.how-it-works-page :where(.public-button, .journey-action-link, .journey-step-button):hover {
+  transform: translateY(-1px);
+}
+
+.how-it-works-page :where(.public-button, .journey-action-link, .journey-step-button):focus-visible {
+  outline: 3px solid rgba(8, 127, 120, 0.32) !important;
+  outline-offset: 3px !important;
+}
+
+.how-it-works-page .how-hero-scene {
+  position: relative !important;
+  min-width: 0 !important;
+  min-height: 31rem !important;
+  height: auto !important;
+  align-self: stretch !important;
+  border-left: 1px solid rgba(126, 242, 231, 0.14) !important;
+  background:
+    radial-gradient(circle at 48% 44%, rgba(25, 215, 196, 0.2), transparent 22rem),
+    linear-gradient(135deg, rgba(1, 14, 25, 0.44), rgba(4, 24, 38, 0.62)) !important;
+  overflow: hidden !important;
+}
+
+[data-theme="light"] .how-it-works-page .how-hero-scene {
+  border-left-color: rgba(8, 127, 120, 0.16) !important;
+  background:
+    radial-gradient(circle at 50% 44%, rgba(8, 127, 120, 0.15), transparent 21rem),
+    linear-gradient(135deg, rgba(230, 250, 248, 0.92), rgba(250, 255, 254, 0.88)) !important;
+}
+
+.how-it-works-page .how-hero-scene-soft-edge {
+  opacity: 0.52 !important;
+}
+
+.how-it-works-page .journey-dashboard,
+.how-it-works-page .how-page-section {
+  position: relative !important;
+  z-index: 1 !important;
+  border: 1px solid var(--how-border) !important;
+  border-radius: clamp(1.45rem, 2.6vw, 2rem) !important;
+  background: linear-gradient(145deg, var(--how-panel-strong), var(--how-panel-soft)) !important;
+  color: var(--how-text) !important;
+  overflow: visible !important;
+}
+
+.how-it-works-page .journey-dashboard {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) !important;
+  gap: clamp(1.6rem, 3vw, 2.25rem) !important;
+  padding: clamp(1.5rem, 3.6vw, 3rem) !important;
+}
+
+[data-theme="light"] .how-it-works-page .journey-dashboard,
+[data-theme="light"] .how-it-works-page .how-page-section {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.985), rgba(237, 249, 248, 0.965)) !important;
+  border-color: var(--how-border) !important;
+  box-shadow: var(--how-shadow) !important;
+}
+
+.how-it-works-page .journey-dashboard .journey-navigator {
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+}
+
+.how-it-works-page .journey-step-track {
+  position: relative !important;
+  display: grid !important;
+  grid-template-columns: repeat(6, minmax(0, 1fr)) !important;
+  gap: clamp(0.7rem, 1.3vw, 1rem) !important;
+  min-height: 0 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  padding: 0 !important;
+  overflow: visible !important;
+}
+
+.how-it-works-page .journey-track-line,
+.how-it-works-page .journey-active-path {
+  display: none !important;
+}
+
+.how-it-works-page .journey-step-button {
+  position: relative !important;
+  display: grid !important;
+  align-content: start !important;
+  justify-items: start !important;
+  gap: 0.75rem !important;
+  min-width: 0 !important;
+  min-height: 8.15rem !important;
+  width: 100% !important;
+  padding: 1rem !important;
+  border: 1px solid rgba(126, 242, 231, 0.18) !important;
+  border-radius: 1.15rem !important;
+  background: rgba(255, 255, 255, 0.07) !important;
+  color: #effffc !important;
+  overflow: hidden !important;
+  text-align: left !important;
+  box-shadow: none !important;
+}
+
+.how-it-works-page .journey-step-button[aria-selected="true"] {
+  border-color: rgba(31, 214, 200, 0.52) !important;
+  background: rgba(15, 118, 110, 0.26) !important;
+}
+
+[data-theme="light"] .how-it-works-page .journey-step-button {
+  background: rgba(255, 255, 255, 0.96) !important;
+  border-color: rgba(20, 126, 130, 0.2) !important;
+  color: #10283a !important;
+  box-shadow: 0 10px 24px rgba(20, 54, 70, 0.09) !important;
+}
+
+[data-theme="light"] .how-it-works-page .journey-step-button[aria-selected="true"] {
+  background: linear-gradient(135deg, rgba(235, 251, 249, 0.99), rgba(255, 255, 255, 0.99)) !important;
+  border-color: rgba(8, 127, 120, 0.42) !important;
+  box-shadow: 0 14px 30px rgba(8, 127, 120, 0.14) !important;
+}
+
+.how-it-works-page .journey-step-button :where(.journey-step-number, .journey-step-icon, b) {
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+.how-it-works-page .journey-step-number {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-width: 2.2rem !important;
+  height: 2.2rem !important;
+  border-radius: 999px !important;
+  background: rgba(31, 214, 200, 0.16) !important;
+  color: #aefbf2 !important;
+  font-size: 0.78rem !important;
+  font-weight: 900 !important;
+}
+
+[data-theme="light"] .how-it-works-page .journey-step-number {
+  background: rgba(8, 127, 120, 0.12) !important;
+  color: #075e5a !important;
+}
+
+.how-it-works-page .journey-step-icon {
+  color: #8df7ed !important;
+}
+
+[data-theme="light"] .how-it-works-page .journey-step-icon {
+  color: #087f78 !important;
+}
+
+.how-it-works-page .journey-step-button b {
+  color: inherit !important;
+  font-size: clamp(0.9rem, 1.1vw, 1rem) !important;
+  line-height: 1.18 !important;
+  overflow-wrap: anywhere;
+}
+
+.how-it-works-page .journey-stage-preview {
+  position: relative !important;
+  min-height: 0 !important;
+  height: auto !important;
+  padding: 0 !important;
+  border: 1px solid rgba(126, 242, 231, 0.16) !important;
+  border-radius: clamp(1.35rem, 2.3vw, 1.8rem) !important;
+  background: rgba(255, 255, 255, 0.06) !important;
+  color: var(--how-text) !important;
+  overflow: hidden !important;
+}
+
+[data-theme="light"] .how-it-works-page .journey-stage-preview {
+  background: rgba(255, 255, 255, 0.97) !important;
+  border-color: rgba(20, 126, 130, 0.2) !important;
+  box-shadow: 0 18px 42px rgba(20, 54, 70, 0.11) !important;
+}
+
+.how-it-works-page .journey-preview-content {
+  position: relative !important;
+  display: grid !important;
+  grid-template-columns: minmax(0, 0.43fr) minmax(0, 0.57fr) !important;
+  gap: clamp(2rem, 4vw, 3.5rem) !important;
+  min-height: 32rem !important;
+  height: auto !important;
+  align-items: stretch !important;
+  padding: clamp(1.5rem, 3.5vw, 3rem) !important;
+  overflow: visible !important;
+}
+
+.how-it-works-page .journey-preview-copy {
+  min-width: 0 !important;
+  max-width: 42rem !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  gap: 1rem !important;
+  color: var(--how-text) !important;
+}
+
+.how-it-works-page .journey-preview-copy h3 {
+  margin: 0 !important;
+  font-size: clamp(2.15rem, 4.2vw, 4.8rem) !important;
+  line-height: 0.96 !important;
+  text-wrap: balance;
+}
+
+.how-it-works-page .journey-preview-copy p {
+  margin: 0 !important;
+  font-size: clamp(1rem, 1.35vw, 1.18rem) !important;
+  line-height: 1.72 !important;
+}
+
+.how-it-works-page .journey-preview-example {
+  display: grid !important;
+  gap: 0.65rem !important;
+  margin: 0 !important;
+  padding: 1rem !important;
+  border: 1px solid rgba(126, 242, 231, 0.14) !important;
+  border-radius: 1rem !important;
+  background: rgba(255, 255, 255, 0.07) !important;
+  color: #eafffb !important;
+}
+
+[data-theme="light"] .how-it-works-page .journey-preview-example {
+  border-color: rgba(8, 127, 120, 0.18) !important;
+  background: rgba(237, 249, 248, 0.92) !important;
+  color: #173747 !important;
+}
+
+.how-it-works-page .journey-preview-example span {
+  color: inherit !important;
+}
+
+.how-it-works-page .journey-preview-example ul {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 0.5rem !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  list-style: none !important;
+}
+
+.how-it-works-page .journey-preview-example li {
+  width: auto !important;
+  min-width: 0 !important;
+  padding: 0.45rem 0.72rem !important;
+  border-radius: 999px !important;
+  background: rgba(15, 118, 110, 0.2) !important;
+  color: #dffefa !important;
+  font-size: 0.88rem !important;
+  font-weight: 700 !important;
+}
+
+[data-theme="light"] .how-it-works-page .journey-preview-example li {
+  background: rgba(255, 255, 255, 0.96) !important;
+  color: #10283a !important;
+  border: 1px solid rgba(8, 127, 120, 0.16) !important;
+}
+
+.how-it-works-page .journey-visual {
+  position: relative !important;
+  min-width: 0 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-height: 27rem !important;
+  height: auto !important;
+  border: 1px solid rgba(126, 242, 231, 0.15) !important;
+  border-radius: clamp(1.15rem, 2vw, 1.6rem) !important;
+  background:
+    radial-gradient(circle at 50% 38%, rgba(31, 214, 200, 0.22), transparent 14rem),
+    linear-gradient(145deg, rgba(3, 20, 33, 0.72), rgba(5, 28, 42, 0.64)) !important;
+  color: #effffc !important;
+  overflow: hidden !important;
+}
+
+[data-theme="light"] .how-it-works-page .journey-visual {
+  background:
+    radial-gradient(circle at 50% 36%, rgba(8, 127, 120, 0.12), transparent 15rem),
+    linear-gradient(145deg, rgba(249, 255, 254, 0.98), rgba(229, 247, 246, 0.96)) !important;
+  border-color: rgba(20, 126, 130, 0.18) !important;
+  color: #10283a !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8) !important;
+}
+
+.how-it-works-page .journey-visual.compact {
+  min-height: 16rem !important;
+  align-self: stretch !important;
+}
+
+.how-it-works-page .journey-stage-section {
+  padding: clamp(1.5rem, 3.5vw, 3rem) !important;
+}
+
+.how-it-works-page .journey-stage-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: clamp(1rem, 2vw, 1.5rem) !important;
+  width: 100% !important;
+  overflow: visible !important;
+}
+
+.how-it-works-page .journey-stage-card {
+  position: relative !important;
+  display: grid !important;
+  grid-template-columns: minmax(0, 0.55fr) minmax(12rem, 0.45fr) !important;
+  gap: clamp(1rem, 1.8vw, 1.5rem) !important;
+  min-width: 0 !important;
+  min-height: 24rem !important;
+  height: auto !important;
+  padding: clamp(1.25rem, 2.3vw, 1.8rem) !important;
+  border: 1px solid rgba(126, 242, 231, 0.16) !important;
+  border-radius: 1.35rem !important;
+  background: rgba(255, 255, 255, 0.07) !important;
+  color: var(--how-text) !important;
+  overflow: hidden !important;
+}
+
+[data-theme="light"] .how-it-works-page .journey-stage-card {
+  background: rgba(255, 255, 255, 0.97) !important;
+  border-color: rgba(20, 126, 130, 0.2) !important;
+  box-shadow: 0 16px 34px rgba(20, 54, 70, 0.1) !important;
+}
+
+.how-it-works-page .journey-stage-watermark {
+  position: absolute !important;
+  inset: auto 1rem 0.65rem auto !important;
+  z-index: 0 !important;
+  color: rgba(126, 242, 231, 0.08) !important;
+  font-size: clamp(4rem, 8vw, 7.5rem) !important;
+  font-weight: 900 !important;
+  line-height: 1 !important;
+  pointer-events: none !important;
+}
+
+[data-theme="light"] .how-it-works-page .journey-stage-watermark {
+  color: rgba(8, 127, 120, 0.08) !important;
+}
+
+.how-it-works-page .journey-stage-copy {
+  position: relative !important;
+  z-index: 1 !important;
+  min-width: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.8rem !important;
+  justify-content: flex-start !important;
+  align-items: flex-start !important;
+}
+
+.how-it-works-page .journey-stage-icon {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 2.7rem !important;
+  height: 2.7rem !important;
+  border-radius: 999px !important;
+  background: rgba(15, 118, 110, 0.22) !important;
+  color: #91f7ee !important;
+}
+
+[data-theme="light"] .how-it-works-page .journey-stage-icon {
+  background: rgba(8, 127, 120, 0.12) !important;
+  color: #087f78 !important;
+}
+
+.how-it-works-page .journey-stage-card h3 {
+  margin: 0 !important;
+  font-size: clamp(1.35rem, 2vw, 1.85rem) !important;
+  line-height: 1.08 !important;
+}
+
+.how-it-works-page .journey-stage-card p {
+  margin: 0 !important;
+  font-size: 0.98rem !important;
+  line-height: 1.62 !important;
+}
+
+.how-it-works-page .journey-stage-card .journey-action-link {
+  align-self: flex-start !important;
+  margin-top: auto !important;
+  padding-inline: 1rem !important;
+  font-size: 0.9rem !important;
+}
+
+.how-it-works-page .journey-stage-card .journey-visual {
+  position: relative !important;
+  z-index: 1 !important;
+  align-self: stretch !important;
+}
+
+.how-it-works-page :where(.journey-chip-cloud span, .journey-diagnostic-rail span, .journey-answer-tags span, .journey-map-node, .journey-chat-bubble, .journey-source-row span, .journey-roadmap-mini > div, .journey-recalibration, .rag-input-labels span, .rag-source-stack span, .rag-source-chips span, .rag-flow-steps span, .pipeline-labels span, .pipeline-tech-chips span, .privacy-panel li) {
+  border: 1px solid rgba(126, 242, 231, 0.16) !important;
+  background: rgba(255, 255, 255, 0.09) !important;
+  color: #effffc !important;
+  text-shadow: none !important;
+}
+
+[data-theme="light"] .how-it-works-page :where(.journey-chip-cloud span, .journey-diagnostic-rail span, .journey-answer-tags span, .journey-map-node, .journey-chat-bubble, .journey-source-row span, .journey-roadmap-mini > div, .journey-recalibration, .rag-input-labels span, .rag-source-stack span, .rag-source-chips span, .rag-flow-steps span, .pipeline-labels span, .pipeline-tech-chips span, .privacy-panel li) {
+  border-color: rgba(8, 127, 120, 0.18) !important;
+  background: rgba(255, 255, 255, 0.94) !important;
+  color: #10283a !important;
+  box-shadow: 0 8px 18px rgba(20, 54, 70, 0.08) !important;
+}
+
+[data-theme="light"] .how-it-works-page :where(.journey-roadmap-mini strong, .journey-roadmap-mini span, .journey-growth-ring span, .rag-source-stack b, .rag-flow-steps b, .privacy-panel b, .pipeline-layer-node b) {
+  color: #10283a !important;
+  -webkit-text-fill-color: currentColor !important;
+}
+
+.how-it-works-page .journey-chip-cloud,
+.how-it-works-page .journey-answer-tags {
+  max-width: calc(100% - 2rem) !important;
+}
+
+.how-it-works-page .journey-map-node,
+.how-it-works-page .journey-chat-bubble,
+.how-it-works-page .journey-recalibration {
+  font-weight: 800 !important;
+}
+
+.how-it-works-page .pipeline-architecture,
+.how-it-works-page .rag-journey-section,
+.how-it-works-page .privacy-control-section,
+.how-it-works-page .how-final-cta {
+  padding: clamp(1.5rem, 3.5vw, 3rem) !important;
+}
+
+.how-it-works-page .pipeline-panel {
+  display: grid !important;
+  gap: clamp(1.25rem, 2vw, 1.6rem) !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow: visible !important;
+}
+
+.how-it-works-page .pipeline-track {
+  position: relative !important;
+  display: grid !important;
+  grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+  gap: clamp(0.9rem, 1.6vw, 1.25rem) !important;
+  padding: 0 !important;
+  min-height: 0 !important;
+  overflow: visible !important;
+}
+
+.how-it-works-page .pipeline-line,
+.how-it-works-page .pipeline-energy,
+.how-it-works-page .pipeline-arrow {
+  display: none !important;
+}
+
+.how-it-works-page .pipeline-layer {
+  position: relative !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.8rem !important;
+  min-width: 0 !important;
+  min-height: 18rem !important;
+  padding: 1.1rem !important;
+  border: 1px solid rgba(126, 242, 231, 0.16) !important;
+  border-radius: 1.2rem !important;
+  background: rgba(255, 255, 255, 0.07) !important;
+  color: var(--how-text) !important;
+  overflow: hidden !important;
+}
+
+[data-theme="light"] .how-it-works-page .pipeline-layer {
+  background: rgba(255, 255, 255, 0.97) !important;
+  border-color: rgba(20, 126, 130, 0.2) !important;
+}
+
+.how-it-works-page .pipeline-layer-node,
+.how-it-works-page .rag-card-icon,
+.how-it-works-page .privacy-icon {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 2.8rem !important;
+  height: 2.8rem !important;
+  border-radius: 999px !important;
+  background: rgba(15, 118, 110, 0.22) !important;
+  color: #91f7ee !important;
+}
+
+[data-theme="light"] .how-it-works-page :where(.pipeline-layer-node, .rag-card-icon, .privacy-icon) {
+  background: rgba(8, 127, 120, 0.12) !important;
+  color: #087f78 !important;
+}
+
+.how-it-works-page .pipeline-layer h3,
+.how-it-works-page .rag-card h3,
+.how-it-works-page .privacy-panel h3 {
+  margin: 0 !important;
+  font-size: clamp(1.18rem, 1.6vw, 1.45rem) !important;
+  line-height: 1.15 !important;
+}
+
+.how-it-works-page .pipeline-layer p,
+.how-it-works-page .rag-card p {
+  margin: 0 !important;
+  font-size: 0.95rem !important;
+  line-height: 1.62 !important;
+}
+
+.how-it-works-page .pipeline-labels,
+.how-it-works-page .pipeline-tech-chips,
+.how-it-works-page .rag-input-labels,
+.how-it-works-page .rag-source-chips,
+.how-it-works-page .rag-notes {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 0.5rem !important;
+  min-width: 0 !important;
+}
+
+.how-it-works-page .pipeline-labels span,
+.how-it-works-page .pipeline-tech-chips span,
+.how-it-works-page .rag-input-labels span,
+.how-it-works-page .rag-source-chips span {
+  width: auto !important;
+  border-radius: 999px !important;
+  padding: 0.42rem 0.66rem !important;
+  font-size: 0.78rem !important;
+  font-weight: 800 !important;
+  line-height: 1.15 !important;
+}
+
+.how-it-works-page .rag-journey-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: clamp(1rem, 2vw, 1.5rem) !important;
+  width: 100% !important;
+  overflow: visible !important;
+}
+
+.how-it-works-page .rag-card,
+.how-it-works-page .privacy-panel {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.9rem !important;
+  min-width: 0 !important;
+  height: auto !important;
+  padding: clamp(1.15rem, 2vw, 1.5rem) !important;
+  border: 1px solid rgba(126, 242, 231, 0.16) !important;
+  border-radius: 1.25rem !important;
+  background: rgba(255, 255, 255, 0.07) !important;
+  color: var(--how-text) !important;
+  overflow: hidden !important;
+}
+
+[data-theme="light"] .how-it-works-page :where(.rag-card, .privacy-panel) {
+  background: rgba(255, 255, 255, 0.97) !important;
+  border-color: rgba(20, 126, 130, 0.2) !important;
+}
+
+.how-it-works-page .rag-source-stack,
+.how-it-works-page .rag-flow-steps,
+.how-it-works-page .privacy-panel ul {
+  display: grid !important;
+  gap: 0.65rem !important;
+  min-width: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  list-style: none !important;
+}
+
+.how-it-works-page .rag-source-stack span,
+.how-it-works-page .rag-flow-steps span,
+.how-it-works-page .privacy-panel li {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.7rem !important;
+  min-width: 0 !important;
+  border-radius: 0.9rem !important;
+  padding: 0.75rem 0.85rem !important;
+  font-size: 0.92rem !important;
+  line-height: 1.35 !important;
+}
+
+.how-it-works-page .privacy-panel li {
+  justify-content: space-between !important;
+}
+
+.how-it-works-page .privacy-panel li > span:nth-child(2) {
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
+}
+
+.how-it-works-page .privacy-control-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: clamp(1rem, 2vw, 1.5rem) !important;
+}
+
+.how-it-works-page .how-final-cta {
+  display: grid !important;
+  grid-template-columns: minmax(0, 0.58fr) minmax(16rem, 0.42fr) !important;
+  align-items: center !important;
+  gap: clamp(1.5rem, 4vw, 3rem) !important;
+  min-height: 24rem !important;
+  overflow: hidden !important;
+}
+
+.how-it-works-page .how-final-copy {
+  position: relative !important;
+  z-index: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  gap: 1.25rem !important;
+  min-width: 0 !important;
+}
+
+.how-it-works-page .how-final-copy h2 {
+  margin: 0 !important;
+  font-size: clamp(2.25rem, 4.8vw, 5rem) !important;
+  line-height: 0.96 !important;
+}
+
+.how-it-works-page .how-final-visual {
+  position: relative !important;
+  min-height: 18rem !important;
+  border: 1px solid rgba(126, 242, 231, 0.16) !important;
+  border-radius: 1.5rem !important;
+  background: rgba(255, 255, 255, 0.07) !important;
+  overflow: hidden !important;
+}
+
+[data-theme="light"] .how-it-works-page .how-final-visual {
+  background: rgba(255, 255, 255, 0.82) !important;
+  border-color: rgba(20, 126, 130, 0.18) !important;
+}
+
+.how-it-works-page .accent-teal {
+  --stage-accent: #19d7c4;
+}
+
+.how-it-works-page .accent-cyan {
+  --stage-accent: #58dff0;
+}
+
+.how-it-works-page .accent-green {
+  --stage-accent: #5edb8f;
+}
+
+.how-it-works-page .accent-violet {
+  --stage-accent: #b49cff;
+}
+
+.how-it-works-page .accent-gold {
+  --stage-accent: #f2c96b;
+}
+
+.how-it-works-page .accent-lime {
+  --stage-accent: #b7e865;
+}
+
+[data-theme="light"] .how-it-works-page .accent-teal {
+  --stage-accent: #087f78;
+}
+
+[data-theme="light"] .how-it-works-page .accent-cyan {
+  --stage-accent: #04758f;
+}
+
+[data-theme="light"] .how-it-works-page .accent-green {
+  --stage-accent: #16764d;
+}
+
+[data-theme="light"] .how-it-works-page .accent-violet {
+  --stage-accent: #5b4db2;
+}
+
+[data-theme="light"] .how-it-works-page .accent-gold {
+  --stage-accent: #826211;
+}
+
+[data-theme="light"] .how-it-works-page .accent-lime {
+  --stage-accent: #4d7411;
+}
+
+.how-it-works-page :where(.accent-teal, .accent-cyan, .accent-green, .accent-violet, .accent-gold, .accent-lime) :where(.journey-step-icon, .journey-stage-icon, .journey-preview-kicker, .journey-map-core, .journey-coach-orb, .journey-growth-ring) {
+  color: var(--stage-accent) !important;
+}
+
+body:has(.how-it-works-page) .floating-voice-chat {
+  right: clamp(0.9rem, 2vw, 1.5rem) !important;
+  bottom: clamp(0.9rem, 2vw, 1.5rem) !important;
+  max-width: calc(100vw - 2rem) !important;
+}
+
+body:has(.how-it-works-page) .floating-voice-chat__launcher {
+  width: auto !important;
+  max-width: min(22rem, calc(100vw - 2rem)) !important;
+  min-width: min(17rem, calc(100vw - 2rem)) !important;
+  height: auto !important;
+  min-height: 3.625rem !important;
+  padding: 0.65rem 1rem !important;
+  overflow: visible !important;
+}
+
+body:has(.how-it-works-page) .floating-voice-chat__launcher span {
+  display: grid !important;
+  min-width: 0 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+[data-theme="light"] body:has(.how-it-works-page) .floating-voice-chat__launcher,
+[data-theme="light"] body:has(.how-it-works-page) .floating-voice-chat__panel {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(237, 249, 248, 0.97)) !important;
+  border-color: rgba(20, 126, 130, 0.2) !important;
+  color: #10283a !important;
+  box-shadow: 0 14px 38px rgba(20, 54, 70, 0.16) !important;
+}
+
+[data-theme="light"] body:has(.how-it-works-page) .floating-voice-chat__launcher :where(span, strong, small, p),
+[data-theme="light"] body:has(.how-it-works-page) .floating-voice-chat__panel :where(h2, h3, p, span, small, button) {
+  color: #10283a !important;
+}
+
+body:has(.how-it-works-page) .public-footer {
+  width: min(var(--how-page-max, 1392px), calc(100% - (var(--how-page-gutter, 2rem) * 2))) !important;
+  max-width: none !important;
+  margin-inline: auto !important;
+}
+
+@media (max-width: 1180px) {
+  .how-it-works-page .how-hero {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  .how-it-works-page .how-hero-scene {
+    min-height: 28rem !important;
+    border-left: 0 !important;
+    border-top: 1px solid rgba(126, 242, 231, 0.14) !important;
+  }
+
+  .how-it-works-page .journey-step-track {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+
+  .how-it-works-page .journey-stage-grid,
+  .how-it-works-page .rag-journey-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .how-it-works-page .journey-stage-card {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  .how-it-works-page .pipeline-track {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 960px) {
+  .how-it-works-page .journey-preview-content,
+  .how-it-works-page .how-final-cta {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  .how-it-works-page .journey-preview-copy {
+    justify-content: flex-start !important;
+  }
+
+  .how-it-works-page .journey-visual {
+    min-height: 22rem !important;
+  }
+
+  .how-it-works-page .privacy-control-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .how-it-works-page {
+    --how-page-gutter: 0.9rem;
+  }
+
+  .how-it-works-page .how-page-main {
+    gap: 3.5rem !important;
+    padding-block: 1.2rem 5.25rem !important;
+  }
+
+  .how-it-works-page .how-hero-copy,
+  .how-it-works-page .journey-dashboard,
+  .how-it-works-page .journey-stage-section,
+  .how-it-works-page .pipeline-architecture,
+  .how-it-works-page .rag-journey-section,
+  .how-it-works-page .privacy-control-section,
+  .how-it-works-page .how-final-cta {
+    padding: 1.05rem !important;
+  }
+
+  .how-it-works-page .how-hero {
+    min-height: 0 !important;
+    border-radius: 1.25rem !important;
+  }
+
+  .how-it-works-page .how-hero-title {
+    max-width: 100% !important;
+    font-size: clamp(2.45rem, 14vw, 4rem) !important;
+  }
+
+  .how-it-works-page .how-hero-scene {
+    min-height: 21rem !important;
+  }
+
+  .how-it-works-page .journey-step-track,
+  .how-it-works-page .journey-stage-grid,
+  .how-it-works-page .pipeline-track,
+  .how-it-works-page .rag-journey-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  .how-it-works-page .journey-step-button {
+    min-height: 5.8rem !important;
+    grid-template-columns: auto 1fr !important;
+    align-items: center !important;
+    align-content: center !important;
+  }
+
+  .how-it-works-page .journey-step-icon {
+    justify-self: end !important;
+  }
+
+  .how-it-works-page .journey-preview-content {
+    min-height: 0 !important;
+    padding: 1rem !important;
+  }
+
+  .how-it-works-page .journey-preview-copy h3,
+  .how-it-works-page .how-section-heading h2,
+  .how-it-works-page .how-final-copy h2 {
+    max-width: 100% !important;
+    font-size: clamp(2rem, 11vw, 3.3rem) !important;
+  }
+
+  .how-it-works-page .journey-visual,
+  .how-it-works-page .journey-visual.compact,
+  .how-it-works-page .how-final-visual {
+    min-height: 18rem !important;
+  }
+
+  .how-it-works-page .journey-stage-card,
+  .how-it-works-page .pipeline-layer,
+  .how-it-works-page .rag-card,
+  .how-it-works-page .privacy-panel {
+    min-height: 0 !important;
+  }
+
+  .how-it-works-page .public-button,
+  .how-it-works-page .journey-action-link {
+    width: 100% !important;
+  }
+
+  body:has(.how-it-works-page) .floating-voice-chat {
+    right: 0.75rem !important;
+    bottom: 0.75rem !important;
+    max-width: calc(100vw - 1.5rem) !important;
+  }
+
+  body:has(.how-it-works-page) .floating-voice-chat__launcher {
+    max-width: calc(100vw - 1.5rem) !important;
+    min-width: min(18rem, calc(100vw - 1.5rem)) !important;
+  }
+}
+
+@media (max-width: 420px) {
+  .how-it-works-page .how-hero-actions,
+  .how-it-works-page .how-final-actions {
+    width: 100% !important;
+  }
+
+  .how-it-works-page .journey-preview-example ul,
+  .how-it-works-page .pipeline-labels,
+  .how-it-works-page .pipeline-tech-chips,
+  .how-it-works-page .rag-source-chips,
+  .how-it-works-page .rag-input-labels {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  .how-it-works-page .privacy-panel li {
+    align-items: flex-start !important;
+    flex-wrap: wrap !important;
+  }
+}
+
+.how-it-works-page .how-hero-actions .public-button:not(.secondary),
+.how-it-works-page .how-final-actions .public-button:not(.secondary) {
+  background: linear-gradient(90deg, var(--color-accent-action), var(--color-accent-action-hover)) !important;
+  color: var(--color-accent-action-text) !important;
+  box-shadow: var(--shadow-action) !important;
+}
+
+.how-it-works-page .journey-navigator button[aria-selected="true"],
+.how-it-works-page .journey-step-button[aria-selected="true"] {
+  border-color: var(--color-accent-action-border) !important;
+  background: var(--color-accent-action-soft) !important;
+  color: var(--color-accent-action-muted) !important;
+}
+
+.how-it-works-page .public-button.secondary:hover,
+.how-it-works-page .journey-action-link:hover {
+  border-color: var(--color-accent-action-border) !important;
+  color: var(--color-accent-action-muted) !important;
+}
