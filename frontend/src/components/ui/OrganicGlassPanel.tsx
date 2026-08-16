@@ -1,1 +1,0 @@
-import type { ReactNode } from "react"; export function OrganicGlassPanel({children,className=""}:{children:ReactNode;className?:string}){return <section className={`oa-panel ${className}`}>{children}</section>}
