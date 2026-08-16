@@ -1,0 +1,46 @@
+{
+  "name": "organicai-compass-frontend",
+  "version": "0.9.0-rc.2",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "typecheck": "tsc -b",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:e2e": "playwright test",
+    "test:e2e:live-real": "node -e \"if (process.env.REAL_PROVIDER_TESTS_ENABLED !== 'true') { console.error('REAL_PROVIDER_TESTS_ENABLED=true is required for live real E2E.'); process.exit(1); }\" && playwright test tests/e2e/live-voice-real.spec.ts",
+    "test:e2e:roadmap": "playwright test tests/e2e/adaptive-roadmap-flow.spec.ts",
+    "test:e2e:ui": "playwright test --ui",
+    "test:e2e:headed": "playwright test --headed"
+  },
+  "dependencies": {
+    "@elevenlabs/react": "^1.10.2",
+    "@fontsource/cormorant-garamond": "^5.2.11",
+    "@react-three/drei": "^9.122.0",
+    "@react-three/fiber": "^8.17.10",
+    "@types/three": "^0.185.1",
+    "@vitejs/plugin-react": "^5.0.0",
+    "axios": "^1.7.9",
+    "framer-motion": "^11.15.0",
+    "lucide-react": "^0.468.0",
+    "motion": "^12.39.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^7.1.1",
+    "recharts": "^2.15.0",
+    "three": "^0.185.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.61.1",
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.5",
+    "vitest": "^2.1.8"
+  }
+}
