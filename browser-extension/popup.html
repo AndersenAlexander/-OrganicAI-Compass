@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Save to OrganicAI Compass</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main class="popup-shell">
+      <header>
+        <p>Save to OrganicAI Compass</p>
+        <h1>Job Capture</h1>
+      </header>
+
+      <section class="notice" id="qualityNotice" hidden>
+        Some job information could not be identified automatically. Please review the captured content before saving.
+      </section>
+
+      <label>
+        Backend URL
+        <input id="backendUrl" type="url" value="http://127.0.0.1:8000/api" />
+      </label>
+      <label>
+        Connection token
+        <input id="connectionToken" type="password" autocomplete="off" />
+      </label>
+      <label>
+        Profile ID
+        <input id="profileId" placeholder="Owned profile ID from OrganicAI Compass" />
+      </label>
+      <label>
+        Detected job title
+        <input id="jobTitle" />
+      </label>
+      <label>
+        Detected employer
+        <input id="employer" />
+      </label>
+      <label>
+        Current URL
+        <input id="sourceUrl" readonly />
+      </label>
+      <label>
+        Source domain
+        <input id="sourceDomain" readonly />
+      </label>
+      <label>
+        Capture method
+        <input id="captureMethod" readonly value="user_triggered_browser_extension" />
+      </label>
+      <label>
+        Captured description preview
+        <textarea id="capturedText"></textarea>
+      </label>
+
+      <section class="privacy">
+        Capture runs only after this popup action. It sends the page URL, title, selected text and visible text preview to your OrganicAI Compass backend. It does not collect browser history, cookies, passwords, form values, private messages, or raw DOM snapshots.
+      </section>
+
+      <div class="buttons">
+        <button id="editButton" type="button">Edit</button>
+        <button id="saveButton" type="button">Save</button>
+        <button id="saveAnalyseButton" type="button">Save and Analyse</button>
+        <button id="cancelButton" type="button">Cancel</button>
+      </div>
+
+      <p id="status" role="status" aria-live="polite"></p>
+    </main>
+    <script src="dist/popup.js" type="module"></script>
+  </body>
+</html>
