@@ -1,0 +1,80 @@
+import { ArrowRight, BookOpenCheck, BrainCircuit, CheckCircle2, CircleDot, Code2, Database, FileCheck2, Flag, Layers3, Mic2, Network, Orbit, Route, ShieldCheck, Sparkles, Target, TestTube2, UsersRound } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
+import { Link } from "react-router-dom";
+import { OrganicPageBackdrop } from "../components/public/OrganicPageBackdrop";
+import { PublicPageShell } from "../components/public/PublicPageShell";
+import "../styles/project-roadmap.css";
+
+type StatusKind = "completed" | "implemented" | "verified" | "progress" | "ready" | "planned" | "future";
+type Milestone = { number:string; title:string; status:string; kind:StatusKind; icon:LucideIcon; purpose:string; outputs:string[]; evidence:string[]; to?:string; action?:string; note?:string };
+
+const milestones: Milestone[] = [
+  { number:"01",title:"Research problem and requirements",status:"COMPLETED",kind:"completed",icon:Target,purpose:"Identify the challenges users face when navigating AI adoption, professional uncertainty, trust, transparency, and future skills.",outputs:["Research problem and user needs","Functional and non-functional requirements","Human-centred AI direction","Preliminary research questions"],evidence:["Public Research page","Project documentation","Requirement-driven feature structure"],to:"/research",action:"Explore the Research" },
+  { number:"02",title:"Human-centred principles and interaction model",status:"COMPLETED",kind:"completed",icon:ShieldCheck,purpose:"Define how OrganicAI Compass should support users without replacing their judgment or hiding uncertainty.",outputs:["Six OrganicAI principles","User-agency and transparency rules","Responsible boundaries","Human + AI collaboration model"],evidence:["Principles page","AI Constitution","Visible source and confidence concepts"],to:"/principles",action:"Read the Principles" },
+  { number:"03",title:"Experience and system design",status:"IMPLEMENTED",kind:"implemented",icon:Layers3,purpose:"Translate research requirements into user journeys, page architecture, responsive navigation, and interaction states.",outputs:["Public, workspace, and authentication experiences","Diagnostic, profile, coach, and roadmap journeys","Light and dark design system","Responsive 3D-enhanced visual language"],evidence:["Separated layout contexts","Finalized public pages","Responsive navigation QA"] },
+  { number:"04",title:"Core MVP implementation",status:"IMPLEMENTED",kind:"implemented",icon:Code2,purpose:"Build the functional software foundation of OrganicAI Compass.",outputs:["React and TypeScript frontend","FastAPI backend and SQLite persistence","JWT authentication and profiles","Diagnostic, Potential Map, Coach, Recommendations, Roadmap, and demo account"],evidence:["Working routes","Persistent demo profile","End-to-end application flow","TypeScript and production build validation"] },
+  { number:"05",title:"Grounded AI and Knowledge Base",status:"IMPLEMENTED",kind:"implemented",icon:Database,purpose:"Reduce unsupported AI guidance by retrieving curated context before answer generation.",outputs:["Curated documents and chunking","Embeddings and semantic retrieval","Grounded answers and source metadata","Confidence and ethical notes"],evidence:["Knowledge Base UI","Reindex, search, and ask APIs","AI Coach grounding integration","Current local index · 8 documents · 24 chunks"],to:"/knowledge-base",action:"Open Knowledge Base" },
+  { number:"06",title:"Voice and personalized interaction",status:"READY FOR API TESTING",kind:"ready",icon:Mic2,purpose:"Enable text and voice interaction while adapting guidance to the user's profile and selected conversation mode.",outputs:["Microphone and transcription workflow","Text-to-speech architecture","Voice-state feedback","Profile-aware coaching and recommendations"],evidence:["OpenAI-ready transcription","ElevenLabs-ready speech generation","Context-aware interaction states"],note:"Live external-service verification requires configured server-side API keys." },
+  { number:"07",title:"Technical stabilization and verification",status:"TECHNICALLY VERIFIED",kind:"verified",icon:TestTube2,purpose:"Stabilize navigation, layouts, responsive behavior, themes, active-profile routing, and authentication states.",outputs:["Separated navigation contexts","Responsive mobile menus","Active-profile URLs","Dark/light themes and overflow protection"],evidence:["16/16 navigation checks","3/3 authentication-state checks","7/7 Research QA checks","Successful TypeScript build"],note:"Software verification does not equal empirical user validation." },
+  { number:"08",title:"Evaluation and dissertation completion",status:"IN PROGRESS",kind:"progress",icon:FileCheck2,purpose:"Evaluate the implemented artifact and document the research findings without claiming unmeasured outcomes.",outputs:["RAG and grounding evaluation","Recommendation and usability evaluation","Agency, trust, voice, and limitation analysis","Dissertation documentation and presentation"],evidence:["Planned evaluation dataset","Participant feedback protocol","Traceability matrix","Documented findings — pending evaluation"],note:"This milestone remains in progress; empirical results are not yet available." },
+];
+
+const evidenceGroups = [
+  [Orbit,"Experience",["Home, About, How It Works","Principles, Research, Project Roadmap","Diagnostic and Human Potential Map","AI Coach and Recommendations","Personalized Roadmap","Knowledge Base"]],
+  [Layers3,"Software architecture",["React, TypeScript, Vite","React Router and React Three Fiber","FastAPI and SQLite","JWT authentication"]],
+  [BrainCircuit,"AI and knowledge",["OpenAI-ready coaching","Curated RAG and embeddings","Semantic retrieval","Source-visible responses","Voice integration architecture","ElevenLabs-ready speech"]],
+  [ShieldCheck,"Engineering quality",["Responsive navigation","Light and dark modes","Route-layout separation","TypeScript build","Playwright navigation and auth tests","Horizontal-overflow checks"]],
+] as const;
+
+const evolution = [
+  ["01","Static public concept","Public information architecture","Clear research narrative"],
+  ["02","Interactive React application","React + TypeScript","Responsive user journeys"],
+  ["03","Persistent system","FastAPI + SQLite + JWT","Profiles and durable state"],
+  ["04","Personalized workflows","Diagnostic + profile context","Relevant guidance"],
+  ["05","RAG grounding","Embeddings + retrieval","Source-visible answers"],
+  ["06","Voice interaction","Transcription + speech architecture","Accessible conversation"],
+  ["07","Evaluation framework","Playwright + research protocol","Evidence-oriented iteration"],
+];
+
+const readiness = [
+  ["READY NOW","ready",["Functional workflow testing","RAG retrieval inspection","Grounded-response review","Recommendation inspection","API integration testing","Task completion testing"]],
+  ["IN PREPARATION","progress",["Formal evaluation protocol","Structured test questions","Participant consent","Usability questionnaire","Trust and agency measures","Result-recording templates"]],
+  ["NOT YET COMPLETED","planned",["Large-scale participant study","Longitudinal evaluation","Comparative statistical analysis","Production deployment validation"]],
+] as const;
+
+const remaining = ["Configure and test production API keys","Verify OpenAI coaching","Reindex RAG with the selected embedding model","Test transcription","Test ElevenLabs speech","Define the evaluation dataset","Evaluate retrieval relevance","Assess grounded answers","Conduct usability sessions","Analyze trust and user agency","Document results","Finalize architecture diagrams","Complete limitations and future work","Prepare dissertation presentation","Create a final demonstration environment"];
+const future = ["Expanded multilingual knowledge corpus","Organization and team accounts","Advanced recommendation evaluation","Grounded/non-grounded experiments","Accessibility improvements","Richer progress analytics","Controlled research deployment","Longitudinal adaptation","Export and deletion controls","Production observability","Security hardening","Optional learning-platform integrations"];
+
+function Status({ kind, children }: { kind:StatusKind; children:React.ReactNode }) { return <span className={`project-roadmap-status ${kind}`}><CircleDot size={12}/>{children}</span>; }
+function Heading({ eyebrow,title,copy }: { eyebrow:string; title:string; copy?:string }) { return <header className="project-roadmap-heading"><p>{eyebrow}</p><h2>{title}</h2>{copy&&<span>{copy}</span>}</header>; }
+
+function RoadmapVisual(){
+  const nodes = ["RESEARCH","PRINCIPLES","DESIGN","MVP","RAG","VOICE","EVALUATION","DISSERTATION"];
+  return <div className="project-roadmap-orbit" role="img" aria-label="Eight development stages orbiting the implemented OrganicAI artifact"><div className="project-roadmap-orbit-core"><Orbit/><b>ORGANICAI</b><span>implemented artifact</span></div><div className="project-roadmap-orbit-path"/>{nodes.map((node,index)=><span key={node} className={`orbit-node node-${index}`}><i>{index+1}</i>{node}</span>)}</div>;
+}
+
+export function PublicRoadmapPage() {
+  document.title="OrganicAI Compass - Project Roadmap";
+  return <PublicPageShell><div className="project-roadmap-page"><OrganicPageBackdrop/><div className="project-roadmap-container">
+    <section className="project-roadmap-hero" aria-labelledby="project-roadmap-title"><div className="project-roadmap-hero-copy"><p className="project-roadmap-eyebrow">PROJECT DEVELOPMENT</p><h1 id="project-roadmap-title">From research concept<br/>to evaluated prototype</h1><p>This public roadmap documents how OrganicAI Compass evolved from a human-centred research question into an implemented AI information system with diagnostic workflows, grounded coaching, voice interaction, personalized recommendations, and an evaluation framework.</p><div className="project-roadmap-badges"><Status kind="implemented">IMPLEMENTED PROTOTYPE</Status><Status kind="verified">TECHNICAL QA COMPLETE</Status><Status kind="progress">EMPIRICAL EVALUATION PREPARATION</Status></div><div className="project-roadmap-actions"><Link className="project-roadmap-button" to="/research">Explore the Research <ArrowRight size={16}/></Link><Link className="project-roadmap-button secondary" to="/diagnostic">Try the Diagnostic</Link><Link className="project-roadmap-text-link" to="/principles">View the Principles</Link></div></div><div className="project-roadmap-hero-visual"><RoadmapVisual/></div></section>
+    <section className="project-roadmap-strip" aria-label="Current project status">{["Implemented multi-module prototype","Public and workspace architecture stabilized","RAG and voice integrations available for testing","Evaluation framework prepared"].map(x=><span key={x}><CheckCircle2 size={16}/>{x}</span>)}<small>LATEST LOCAL SOFTWARE VERIFICATION · 16/16 NAVIGATION · 3/3 AUTHENTICATION STATES</small></section>
+
+    <section className="project-roadmap-section"><Heading eyebrow="DEVELOPMENT JOURNEY" title="Eight stages from research question to dissertation artifact" copy="Each stage connects a research requirement to a visible software artifact, implementation evidence, and the next evaluation step."/><div className="project-roadmap-legend">{[["completed","Completed"],["implemented","Implemented"],["verified","Technically Verified"],["progress","In Progress"],["planned","Planned"],["future","Future"]].map(([kind,label])=><Status key={kind} kind={kind as StatusKind}>{label}</Status>)}</div>
+      <div className="project-roadmap-timeline">{milestones.map((m,index)=>{const Icon=m.icon;return <article className={`project-roadmap-milestone ${index%2?"right":"left"}`} key={m.number}><span className="timeline-marker">{m.number}</span><div className="milestone-card"><header><span className="milestone-icon"><Icon size={23}/></span><Status kind={m.kind}>{m.status}</Status></header><h3>{m.title}</h3><p>{m.purpose}</p><div className="milestone-columns"><div><h4>Outputs</h4><ul>{m.outputs.map(x=><li key={x}><CheckCircle2 size={14}/>{x}</li>)}</ul></div><div><h4>Evidence</h4><ul>{m.evidence.map(x=><li key={x}><BookOpenCheck size={14}/>{x}</li>)}</ul></div></div>{m.note&&<small className="milestone-note">{m.note}</small>}{m.to&&<Link className="milestone-link" to={m.to}>{m.action}<ArrowRight size={15}/></Link>}</div></article>})}</div>
+    </section>
+
+    <section className="project-roadmap-section"><Heading eyebrow="IMPLEMENTED ARTIFACT" title="What exists in the current OrganicAI Compass prototype"/><div className="project-roadmap-evidence-grid">{evidenceGroups.map(([Icon,title,items])=><article key={title}><span><Icon size={23}/></span><h3>{title}</h3><ul>{items.map(x=><li key={x}><CheckCircle2 size={14}/>{x}</li>)}</ul></article>)}</div></section>
+
+    <section className="project-roadmap-section project-roadmap-evolution"><Heading eyebrow="TECHNOLOGY EVOLUTION" title="How the artifact expanded in capability and research value"/><div className="evolution-flow">{evolution.map(([no,title,technology,value])=><article key={no}><span>{no}</span><h3>{title}</h3><b>{technology}</b><p>{value}</p></article>)}</div></section>
+
+    <section className="project-roadmap-section project-roadmap-verification"><div><p>SOFTWARE VERIFICATION</p><h2>Technical verification completed before empirical evaluation</h2><span>Technical verification checks whether the software behaves as designed. Empirical evaluation investigates usefulness, relevance, trust, usability, and perceived user agency.</span></div><div className="verification-grid">{["Build and TypeScript","Navigation architecture","Authentication states","Responsive layouts","Theme switching","Active-profile routing","No horizontal overflow","Research-page QA"].map(x=><span key={x}><CheckCircle2 size={16}/><b>{x}</b><small>VERIFIED</small></span>)}</div><strong>Software verification does not equal empirical user validation.</strong></section>
+
+    <section className="project-roadmap-section"><Heading eyebrow="EVALUATION READINESS" title="Preparing the implemented artifact for structured research evaluation"/><div className="project-roadmap-readiness">{readiness.map(([title,kind,items])=><article key={title}><Status kind={kind as StatusKind}>{title}</Status><ul>{items.map(x=><li key={x}><CircleDot size={14}/>{x}</li>)}</ul></article>)}</div></section>
+
+    <section className="project-roadmap-section"><Heading eyebrow="REMAINING WORK" title="From technically verified prototype to evaluated dissertation artifact"/><div className="project-roadmap-checklist">{remaining.map((x,index)=><article key={x}><span>{String(index+1).padStart(2,"0")}</span><p>{x}</p><Status kind="planned">PLANNED</Status></article>)}</div></section>
+
+    <section className="project-roadmap-section project-roadmap-future"><Heading eyebrow="BEYOND THE DISSERTATION" title="Potential evolution after the research prototype" copy="These directions are possibilities for future development, not commitments to a commercial release."/><Status kind="future">FUTURE DEVELOPMENT</Status><div>{future.map(x=><article key={x}><Sparkles size={16}/>{x}</article>)}</div></section>
+
+    <section className="project-roadmap-cta"><div><p>RESEARCH → IMPLEMENTATION → EVALUATION</p><h2>Explore the project from research to implementation</h2><span>Review the research framework, inspect the grounded Knowledge Base, or enter the implemented OrganicAI Compass workflow.</span><div className="project-roadmap-actions"><Link className="project-roadmap-button" to="/research">Explore the Research</Link><Link className="project-roadmap-button secondary" to="/knowledge-base">Open Knowledge Base</Link><Link className="project-roadmap-button secondary" to="/diagnostic">Try the Diagnostic</Link><Link className="project-roadmap-text-link" to="/principles">Read the Principles</Link></div></div><div className="project-roadmap-cta-path" aria-hidden="true"><Route/><i/><i/><i/><span>CONCEPT</span><span>EVIDENCE</span><b>DISSERTATION</b></div></section>
+  </div></div></PublicPageShell>;
+}
