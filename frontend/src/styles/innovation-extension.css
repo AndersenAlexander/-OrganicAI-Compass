@@ -1,0 +1,435 @@
+.innovation-page,
+.advisor-review-page {
+  width: min(1420px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 24px 0 96px;
+}
+
+.advisor-review-page {
+  min-height: 100vh;
+}
+
+.innovation-page *,
+.advisor-review-page * {
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+.advisor-review-shell {
+  margin-top: 24px;
+}
+
+.innovation-header,
+.advisor-review-shell > header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 520px);
+  gap: 22px;
+  align-items: stretch;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: clamp(24px, 4vw, 42px);
+  background: linear-gradient(135deg, rgba(20, 83, 45, 0.1), rgba(2, 132, 199, 0.08)), var(--color-surface);
+}
+
+.advisor-review-shell > header {
+  display: block;
+}
+
+.innovation-eyebrow {
+  margin: 0 0 10px;
+  color: var(--teal);
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.innovation-header h1,
+.advisor-review-shell h1 {
+  max-width: 980px;
+  margin: 0;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(2.45rem, 4vw, 4.1rem);
+  font-weight: 600;
+  line-height: 1;
+}
+
+.innovation-header p:not(.innovation-eyebrow),
+.advisor-review-shell header p:not(.innovation-eyebrow),
+.innovation-lead {
+  max-width: 850px;
+  margin: 14px 0 0;
+  color: var(--color-text-muted);
+  line-height: 1.62;
+}
+
+.innovation-metrics,
+.innovation-metric-grid {
+  display: grid;
+  gap: 10px;
+}
+
+.innovation-metrics {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.innovation-metric-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-bottom: 16px;
+}
+
+.innovation-tabs,
+.innovation-actions,
+.innovation-chip-row,
+.innovation-filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.innovation-tabs {
+  margin: 18px 0;
+}
+
+.innovation-grid {
+  display: grid;
+  gap: 18px;
+}
+
+.innovation-grid--main {
+  grid-template-columns: minmax(0, 1.2fr) minmax(360px, 0.8fr);
+  align-items: start;
+}
+
+.innovation-panel,
+.innovation-card,
+.innovation-metric {
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background: var(--color-surface);
+  box-shadow: var(--shadow-card);
+}
+
+.innovation-panel {
+  padding: 20px;
+}
+
+.innovation-panel__header {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.innovation-panel__header > div:first-child {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.innovation-panel__header h2,
+.innovation-card h3 {
+  margin: 0;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-weight: 600;
+  line-height: 1.05;
+}
+
+.innovation-panel__header h2 {
+  font-size: 1.8rem;
+}
+
+.innovation-panel__icon,
+.innovation-metric > span {
+  display: grid;
+  place-items: center;
+  color: var(--teal);
+  background: rgba(15, 118, 110, 0.09);
+}
+
+.innovation-panel__icon {
+  width: 38px;
+  height: 38px;
+  border: 1px solid rgba(15, 118, 110, 0.22);
+  border-radius: 50%;
+}
+
+.innovation-metric {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  min-height: 78px;
+  padding: 14px;
+}
+
+.innovation-metric > span {
+  width: 36px;
+  height: 36px;
+  flex: none;
+  border-radius: 50%;
+}
+
+.innovation-metric b,
+.innovation-metric small {
+  display: block;
+}
+
+.innovation-metric small,
+.innovation-row p,
+.innovation-card p,
+.innovation-row small {
+  color: var(--color-text-muted);
+}
+
+.innovation-metric small {
+  margin-top: 3px;
+  font-size: 0.76rem;
+}
+
+.innovation-notices {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.innovation-notices p {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin: 0;
+  border: 1px solid rgba(15, 118, 110, 0.22);
+  border-radius: 8px;
+  padding: 12px 14px;
+  background: rgba(15, 118, 110, 0.08);
+}
+
+.innovation-notice-error {
+  border-color: rgba(220, 38, 38, 0.25) !important;
+  background: rgba(220, 38, 38, 0.08) !important;
+}
+
+.innovation-source-box,
+.innovation-empty {
+  border: 1px dashed var(--color-border);
+  border-radius: 8px;
+  padding: 14px;
+  background: rgba(100, 116, 139, 0.06);
+  color: var(--color-text-muted);
+}
+
+.innovation-source-box {
+  display: grid;
+  gap: 6px;
+  margin: 14px 0;
+  border-style: solid;
+  border-left: 3px solid var(--teal);
+}
+
+.innovation-source-box p,
+.innovation-row p,
+.innovation-card p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.innovation-list,
+.innovation-list-text {
+  display: grid;
+  gap: 10px;
+}
+
+.innovation-list-text {
+  padding-left: 18px;
+  color: var(--color-text-muted);
+}
+
+.innovation-row,
+.innovation-card {
+  display: grid;
+  gap: 10px;
+  padding: 14px;
+}
+
+.innovation-row {
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: start;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background: rgba(100, 116, 139, 0.05);
+}
+
+.innovation-row-title {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.innovation-chip-row span,
+.innovation-fit-grid span {
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  padding: 6px 9px;
+  background: rgba(100, 116, 139, 0.06);
+  color: var(--color-text-muted);
+  font-size: 0.76rem;
+  line-height: 1.25;
+}
+
+.innovation-pill {
+  display: inline-flex;
+  min-height: 26px;
+  align-items: center;
+  border: 1px solid rgba(15, 118, 110, 0.22);
+  border-radius: 999px;
+  padding: 4px 9px;
+  color: var(--teal);
+  background: rgba(15, 118, 110, 0.08);
+  font-size: 0.72rem;
+  font-weight: 900;
+  line-height: 1.1;
+}
+
+.innovation-pill--success {
+  border-color: rgba(22, 163, 74, 0.28);
+  color: #15803d;
+  background: rgba(22, 163, 74, 0.08);
+}
+
+.innovation-pill--warning {
+  border-color: rgba(217, 119, 6, 0.28);
+  color: #b45309;
+  background: rgba(217, 119, 6, 0.08);
+}
+
+.innovation-pill--danger {
+  border-color: rgba(220, 38, 38, 0.28);
+  color: #b91c1c;
+  background: rgba(220, 38, 38, 0.08);
+}
+
+.innovation-pill--muted {
+  border-color: var(--color-border);
+  color: var(--color-text-muted);
+  background: rgba(100, 116, 139, 0.08);
+}
+
+.innovation-token {
+  overflow: auto;
+  max-height: 460px;
+  margin: 0 0 12px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 12px;
+  background: rgba(2, 6, 23, 0.86);
+  color: #d7fbe9;
+  font-size: 0.78rem;
+  line-height: 1.45;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.innovation-persona-grid,
+.innovation-role-grid,
+.innovation-fit-grid {
+  display: grid;
+  gap: 12px;
+}
+
+.innovation-persona-grid,
+.innovation-role-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.innovation-card--link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.innovation-fit-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 16px;
+}
+
+.innovation-fit-grid span {
+  border-radius: 8px;
+}
+
+.innovation-fit-grid b {
+  display: block;
+  color: var(--color-text);
+}
+
+.innovation-filter-row {
+  align-items: end;
+  margin-bottom: 14px;
+}
+
+.innovation-filter-row label,
+.innovation-textarea-label {
+  display: grid;
+  gap: 6px;
+  color: var(--color-text-muted);
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.innovation-textarea-label textarea {
+  min-height: 170px;
+  resize: vertical;
+}
+
+@media (max-width: 1120px) {
+  .innovation-header,
+  .innovation-grid--main {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .innovation-page,
+  .advisor-review-page {
+    width: calc(100% - 24px);
+  }
+
+  .innovation-header,
+  .advisor-review-shell > header {
+    padding: 22px;
+  }
+
+  .innovation-header h1,
+  .advisor-review-shell h1 {
+    font-size: clamp(2.15rem, 11vw, 3rem);
+  }
+
+  .innovation-tabs,
+  .innovation-actions,
+  .innovation-filter-row {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .innovation-tabs a,
+  .innovation-actions button,
+  .innovation-filter-row label,
+  .innovation-filter-row select {
+    width: 100%;
+  }
+
+  .innovation-metrics,
+  .innovation-metric-grid,
+  .innovation-persona-grid,
+  .innovation-role-grid,
+  .innovation-fit-grid,
+  .innovation-row {
+    grid-template-columns: 1fr;
+  }
+
+  .innovation-panel__header,
+  .innovation-row-title {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
