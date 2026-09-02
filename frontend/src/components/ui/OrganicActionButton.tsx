@@ -1,1 +1,0 @@
-import type { ButtonHTMLAttributes } from "react"; export function OrganicActionButton(props:ButtonHTMLAttributes<HTMLButtonElement>){return <button {...props} className={`oa-button ${props.className||""}`}/>} 

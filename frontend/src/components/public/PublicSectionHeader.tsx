@@ -1,1 +1,0 @@
-export function PublicSectionHeader({ eyebrow, title, description }:{eyebrow?:string;title:string;description?:string}) { return <header className="public-section-header">{eyebrow && <p>{eyebrow}</p>}<h2>{title}</h2>{description && <span>{description}</span>}</header>; }
