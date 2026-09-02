@@ -1,0 +1,7 @@
+# Example only. Do not rename to CODEOWNERS until real owners are approved.
+
+# * @your-github-organization/organicai-maintainers
+# backend/ @your-github-organization/backend-reviewers
+# frontend/ @your-github-organization/frontend-reviewers
+# deploy/ @your-github-organization/operations-reviewers
+# docs/ @your-github-organization/documentation-reviewers

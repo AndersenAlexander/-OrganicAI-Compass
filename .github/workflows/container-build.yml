@@ -1,0 +1,33 @@
+name: OrganicAI Container Build
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - backend/**
+      - frontend/**
+      - docker-compose.staging.yml
+      - deploy/**
+
+permissions:
+  contents: read
+
+concurrency:
+  group: organicai-container-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - name: Set up Buildx
+        uses: docker/setup-buildx-action@8d2750c68a42422c14e847fe6c8ac0403b4cbd6f # v3
+      - name: Backend image
+        run: docker buildx build --platform linux/amd64,linux/arm64 --file backend/Dockerfile --target runtime --tag organicai-backend:ci --output type=cacheonly backend
+      - name: Frontend image
+        run: docker buildx build --platform linux/amd64,linux/arm64 --file frontend/Dockerfile --target runtime --tag organicai-frontend:ci --output type=cacheonly frontend
+      - name: Publishing disabled
+        run: echo "Container publishing is disabled until a registry is selected."
