@@ -1,0 +1,72 @@
+{
+  "title": "OrganicAI Local Staging",
+  "schemaVersion": 39,
+  "panels": [
+    {
+      "type": "stat",
+      "title": "Request rate",
+      "targets": [{"expr": "sum(rate(organicai_http_requests_total[5m]))"}],
+      "gridPos": {"x": 0, "y": 0, "w": 6, "h": 4}
+    },
+    {
+      "type": "stat",
+      "title": "Error rate",
+      "targets": [{"expr": "sum(rate(organicai_http_requests_total{status_class=\"5xx\"}[5m]))"}],
+      "gridPos": {"x": 6, "y": 0, "w": 6, "h": 4}
+    },
+    {
+      "type": "timeseries",
+      "title": "Latency",
+      "targets": [{"expr": "sum(rate(organicai_http_request_duration_seconds_sum[5m]))"}],
+      "gridPos": {"x": 12, "y": 0, "w": 6, "h": 4}
+    },
+    {
+      "type": "stat",
+      "title": "Backend readiness",
+      "targets": [{"expr": "organicai_database_available"}],
+      "gridPos": {"x": 18, "y": 0, "w": 6, "h": 4}
+    },
+    {
+      "type": "stat",
+      "title": "Database health",
+      "targets": [{"expr": "organicai_database_available"}],
+      "gridPos": {"x": 0, "y": 4, "w": 6, "h": 4}
+    },
+    {
+      "type": "stat",
+      "title": "Worker heartbeat",
+      "targets": [{"expr": "sum(organicai_worker_heartbeat_total)"}],
+      "gridPos": {"x": 6, "y": 4, "w": 6, "h": 4}
+    },
+    {
+      "type": "stat",
+      "title": "Privacy job state",
+      "targets": [{"expr": "sum(organicai_privacy_jobs_total)"}],
+      "gridPos": {"x": 12, "y": 4, "w": 6, "h": 4}
+    },
+    {
+      "type": "stat",
+      "title": "Provider failures",
+      "targets": [{"expr": "sum(organicai_provider_requests_total{result=\"failure\"})"}],
+      "gridPos": {"x": 18, "y": 4, "w": 6, "h": 4}
+    },
+    {
+      "type": "stat",
+      "title": "Webhook rejections",
+      "targets": [{"expr": "sum(organicai_webhook_signature_failures_total)"}],
+      "gridPos": {"x": 0, "y": 8, "w": 6, "h": 4}
+    },
+    {
+      "type": "stat",
+      "title": "Active WebSockets",
+      "targets": [{"expr": "organicai_websocket_active_connections"}],
+      "gridPos": {"x": 6, "y": 8, "w": 6, "h": 4}
+    },
+    {
+      "type": "stat",
+      "title": "Dead-letter jobs",
+      "targets": [{"expr": "sum(organicai_dead_letter_jobs_total)"}],
+      "gridPos": {"x": 12, "y": 8, "w": 6, "h": 4}
+    }
+  ]
+}
