@@ -1,0 +1,2 @@
+"""External provider privacy adapters."""
+
