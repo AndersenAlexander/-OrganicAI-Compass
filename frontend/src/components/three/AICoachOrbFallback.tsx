@@ -1,0 +1,2 @@
+import type { CoachState } from "../../context/CoachContext";
+export function AICoachOrbFallback({state="idle",className=""}:{state?:CoachState;className?:string}){return <div role="img" aria-label={`AI Coach is ${state}`} className={`grid place-items-center rounded-full border border-teal-200/30 bg-[radial-gradient(circle,rgba(94,234,212,.35),rgba(7,21,39,.9))] text-xs font-bold uppercase tracking-wider text-white shadow-glow ${className}`}><span>{state}</span></div>}

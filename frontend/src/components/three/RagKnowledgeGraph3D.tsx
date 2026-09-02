@@ -1,0 +1,6 @@
+import { Canvas, useFrame } from "@react-three/fiber";
+import { Sparkles } from "@react-three/drei";
+import { useRef } from "react";
+import type { Group } from "three";
+function Graph(){const group=useRef<Group>(null);useFrame((_,delta)=>{if(group.current)group.current.rotation.y+=delta*.08});return <group ref={group}><mesh><sphereGeometry args={[.72,32,32]}/><meshPhysicalMaterial color="#5eead4" transmission={.7} transparent opacity={.55}/></mesh>{Array.from({length:8},(_,i)=>{const a=i/8*Math.PI*2;return <group key={i} position={[Math.cos(a)*2,Math.sin(a)*1.3,Math.sin(a*2)*.35]}><mesh><sphereGeometry args={[.15,16,16]}/><meshStandardMaterial color={["#38bdf8","#84cc16","#a78bfa","#e2c576"][i%4]} emissive={["#38bdf8","#84cc16","#a78bfa","#e2c576"][i%4]} emissiveIntensity={.6}/></mesh></group>})}<Sparkles count={35} scale={4.5} size={1.2} speed={.15}/></group>}
+export function RagKnowledgeGraph3D(){return <Canvas aria-hidden="true" dpr={[1,1.5]} camera={{position:[0,0,5.4],fov:38}} gl={{alpha:true,antialias:true,powerPreference:"high-performance"}}><ambientLight intensity={.7}/><pointLight position={[2,3,3]} color="#5eead4" intensity={2}/><pointLight position={[-3,-1,2]} color="#38bdf8" intensity={1}/><Graph/></Canvas>}
